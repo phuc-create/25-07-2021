@@ -1,0 +1,910 @@
+@import url('../css/fonts.css');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    background: #0652DD;
+}
+
+
+/*narbar*/
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #aaa69d;
+    height: 35px;
+}
+
+.nav nav {
+    background: #aaa69d;
+    width: 100%;
+    padding: 0px 20px;
+    margin-bottom: 5px;
+}
+
+.nav nav ul {
+    position: relative;
+    display: flex;
+    list-style: none;
+}
+
+.nav nav ul li {
+    position: relative;
+    padding: 5px 25px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.nav nav ul li a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+
+.nav nav ul li:hover {
+    color: white;
+    background: #000;
+}
+
+.nav nav ul li:hover a {
+    color: white;
+}
+
+li.nav-drop {
+    position: relative;
+    display: inline-block;
+    width: auto;
+}
+
+nav.show {
+    display: block;
+}
+
+.drop {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 200px;
+    color: #000;
+    z-index: 2;
+    margin-top: 5px;
+    box-shadow: 15px 20px;
+}
+
+.nav-drop:hover .drop {
+    display: block;
+}
+
+.nav-drop .drop a#a {
+    margin: 20px 25px;
+    padding: 5px 5px;
+    color: #000;
+    text-decoration: none;
+    display: block;
+    width: 80%;
+}
+
+.nav-drop .drop a#a:hover {
+    background: #2ecc71;
+}
+
+.drop::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    width: 90%;
+    height: 90%;
+    z-index: -1000;
+}
+
+.nav .toggle,
+.nav .logo {
+    display: none;
+    font-weight: bold;
+    padding: 7px 20px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav .toggle:hover,
+.nav .logo:hover {
+    background: #2ecc71;
+}
+
+.nav-logo h1 {
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.nav-logo h1::before {
+    content: '=======[]=======';
+    position: relative;
+}
+
+.nav-logo h1::after {
+    content: '=======[]=======';
+    position: relative;
+}
+
+@media(max-width:910px) {
+    .nav-logo h1 {
+        font-size: 17px;
+    }
+}
+
+@media(max-width:560px) {
+    .nav-logo h1 {
+        font-size: 14px;
+        z-index: -1;
+    }
+    .nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+    }
+    .nav .toggle,
+    .nav .logo {
+        display: revert;
+        justify-self: center;
+    }
+    .nav nav {
+        display: none;
+    }
+    nav.show {
+        position: relative;
+        ;
+        display: block;
+        grid-area: auto;
+    }
+    .nav nav ul {
+        position: absolute;
+        display: inline-block;
+        list-style: none;
+        width: 100%;
+        z-index: 10;
+        background: #aaa69d;
+        padding: 10px;
+    }
+    li.nav-drop {
+        width: 100%;
+    }
+}
+
+@media(max-width: 398px) {
+    .nav-logo h1::before {
+        content: '====[]====';
+        position: relative;
+    }
+    .nav-logo h1::after {
+        content: '====[]====';
+        position: relative;
+    }
+}
+
+
+/*---x---narbar---x---*/
+
+
+/*Lời nói đầu*/
+
+.auto-write {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 20px;
+    border: 2px solid #f1f1f1;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.auto-write2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 10px;
+    border: 2px solid #f1f1f1;
+    font-size: 30px;
+}
+
+.auto-write2 h1 {
+    font-size: 30px;
+    color: red;
+    padding: 20px;
+}
+
+.auto-write2 span {
+    padding: 20px;
+    font-weight: bold;
+    color: #f9ca24;
+}
+
+
+/*--------x--------Lời nói đầu--------x--------*/
+
+
+/*----------------Show kĩ năng----------------*/
+
+.nav-skill {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    border: 2px solid #fff
+}
+
+.nav-skill h2 {
+    grid-column: 1;
+    padding: 10px 20px;
+}
+
+.nav-skill h2 span {
+    color: red;
+}
+
+.nav-skill span {
+    padding: 10px 20px;
+    font-size: 25px;
+}
+
+.nav-skill span#g1 {
+    grid-column: 2;
+    grid-row: 1/2;
+    height: 100%;
+    width: 60%;
+    background: #eb4d4b;
+}
+
+.nav-skill span#g2 {
+    grid-column: 2;
+    grid-row: 2/2;
+    height: 100%;
+    width: 50%;
+    background: #1e90ff;
+}
+
+.nav-skill span#g3 {
+    grid-column: 2;
+    grid-row: 3;
+    height: 100%;
+    width: 25%;
+    background: #e84393;
+}
+
+.nav-skill span#g4 {
+    grid-column: 2;
+    grid-row: 4;
+    height: 100%;
+    width: 40%;
+    background: #f9ca24;
+}
+
+.nav-skill span#g5 {
+    grid-column: 2;
+    grid-row: 5;
+    height: 100%;
+    width: 30%;
+    background: #1e90ff;
+}
+
+.nav-skill span#g6 {
+    grid-column: 2;
+    grid-row: 6;
+    height: 100%;
+    width: 55%;
+    background: linear-gradient(90deg, #747d8c 0%, #ffa502 35%, #00d4ff 100%);
+}
+
+
+/*---------x-------Show kĩ năng--------x--------*/
+
+
+/*----------------pascal mode----------------*/
+
+section.pascal-mode {
+    height: 700px;
+    width: 100%;
+    background: #f1f1f1;
+    min-height: 30vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: url(../img/bg-pascal.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+section.pascal-mode .pascal-box {
+    background: #a4b0be;
+    margin: 20px 40px;
+    padding: 5px;
+}
+
+section.pascal-mode .pascal-box p {
+    text-align: center;
+    color: #f1f1f1;
+    font-size: 20px;
+}
+
+section.pascal-mode .pascal-box p::before {
+    content: '=========================================';
+    position: relative;
+}
+
+section.pascal-mode .pascal-box p::after {
+    content: '=========================================';
+    position: relative;
+}
+
+section.pascal-mode .pascal-box .pascal-box2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 100px;
+    border: 3px solid #f1f1f1;
+}
+
+section.pascal-mode .pascal-box .pascal-box2 button {
+    position: relative;
+    height: 100%;
+    padding: 0px 30px;
+    margin-top: 20px;
+    border: none;
+    color: #ffa502;
+    background: #009432;
+    cursor: pointer;
+    box-shadow: 5px 6px #000;
+    outline: none;
+}
+
+section.pascal-mode .pascal-box .pascal-box2 button:hover {
+    letter-spacing: 2px;
+}
+
+
+/*----------x------pascal mode-------x---------*/
+
+
+/*----------------scroll top button----------------*/
+
+.ScrolltoTop {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    right: 20px;
+    bottom: 2px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.ScrolltoTop button {
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #009432;
+    cursor: pointer;
+    outline: none;
+}
+
+.ScrolltoTop button {
+    font-size: 20px;
+    color: #f1c40f;
+}
+
+.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*----------x------scroll top button-------x---------*/
+
+
+/*----------------About me----------------*/
+
+section.about {
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+section.about .about-both {
+    background: #a4b0be;
+}
+
+section.about .about-h1 {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    border: 3px solid #f1f1f1;
+}
+
+section.about .about-box {
+    border: 2px solid #fff;
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+}
+
+section.about .about-box .btn-about {
+    text-align: center;
+    width: 100px;
+    height: 100%;
+    background: #009432;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    color: #f1c40f;
+    outline: none;
+    border: none;
+    box-shadow: 5px 6px #000;
+}
+
+section.about .about-box .btn-about:hover {
+    letter-spacing: 2px;
+}
+
+
+/*--------x--------About me------x----------*/
+
+
+/*----------------contact me----------------*/
+
+section.contact {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+section.contact .contact-form {
+    position: relative;
+    padding: 20px;
+}
+
+section.contact .contact-form h1 {
+    padding: 0px 0px 0px 20px;
+}
+
+section.contact .contact-form form {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    line-height: 1.1rem;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+section.contact .contact-form form input,
+section.contact .contact-form form textarea {
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    font-size: 16px;
+    color: #000;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    border-left: 2px solid rgba(0, 0, 0, 0.5);
+    width: 100%;
+    resize: none;
+    background: #a4b0be;
+}
+
+section.contact .contact-form form input:focus,
+section.contact .contact-form form textarea:focus {
+    background-color: #f1f1f1;
+    box-shadow: 5px 6px #000;
+    height: 50px;
+}
+
+section.contact .contact-form form textarea {
+    min-height: 100px;
+}
+
+section.contact .regis-form {
+    position: relative;
+    padding: 20px;
+}
+
+section.contact .regis-form h1 {
+    padding: 0px 0px 0px 20px;
+}
+
+section.contact .regis-form form {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    line-height: 1.1rem;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+section.contact .regis-form form input,
+section.contact .regis-form form textarea {
+    padding: 5px;
+    margin: 0px 0px 10px 0px;
+    font-size: 16px;
+    color: #000;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    border-left: 2px solid rgba(0, 0, 0, 0.5);
+    width: 100%;
+    resize: none;
+    background: #a4b0be;
+}
+
+section.contact .regis-form form input:focus,
+section.contact .regis-form form textarea:focus {
+    background-color: #f1f1f1;
+    box-shadow: 5px 6px #000;
+    height: 50px;
+}
+
+section.contact .regis-form form textarea {
+    min-height: 100px;
+}
+
+section.contact .contact-form input[type="submit"],
+section.contact .regis-form input[type="submit"] {
+    background: #009432;
+    color: #f1c40f;
+}
+
+section.contact .contact-form input[type="submit"]:hover,
+section.contact .regis-form input[type="submit"]:hover {
+    letter-spacing: 2px;
+    box-shadow: 5px 6px #000;
+    background: #009432;
+}
+
+
+/*--------x--------contact me------x----------*/
+
+
+/*----------------social network------x----------*/
+
+footer.scial {
+    width: 100%;
+    padding: 20px;
+}
+
+footer.scial h1 {
+    font-size: 20px;
+    position: relative;
+}
+
+footer.scial .sci-box {
+    display: block;
+    justify-content: center;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+footer.scial .sci-box .sci-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+footer.scial .sci-box .sci-link button {
+    position: relative;
+    width: auto;
+    background: #a4b0be;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    animation: move 6s infinite;
+}
+
+@keyframes move {
+    from {
+        left: 0px;
+        box-shadow: 20px 20px 50px 10px #009432 inset;
+    }
+    to {
+        left: 50px;
+        box-shadow: 20px 20px 20px 10px #009432 inset;
+    }
+}
+
+footer.scial .sci-box .sci-link button a {
+    text-decoration: none;
+    color: #000;
+}
+
+footer.scial .sci-box .sci-link button:hover a {
+    color: #f1c40f;
+}
+
+footer.scial .sci-box .sci-link button:hover {
+    background: #009432;
+    color: #f1c40f;
+    box-shadow: 5px 6px #000;
+}
+
+footer.scial .sci-box .sci-link button.first,
+footer.scial .sci-box .sci-link button.second,
+footer.scial .sci-box .sci-link button.third,
+footer.scial .sci-box .sci-link button.fourth,
+footer.scial .sci-box .sci-link button.fifth {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+footer.scial .sci-box .sci-link button.first1,
+footer.scial .sci-box .sci-link button.second1,
+footer.scial .sci-box .sci-link button.third1,
+footer.scial .sci-box .sci-link button.fourth1,
+footer.scial .sci-box .sci-link button.fifth1 {
+    visibility: visible;
+    opacity: 1;
+}
+
+footer.scial .sci-box .sci-link button.first2,
+footer.scial .sci-box .sci-link button.second2,
+footer.scial .sci-box .sci-link button.third2,
+footer.scial .sci-box .sci-link button.fourth2,
+footer.scial .sci-box .sci-link button.fifth2 {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+footer.scial .sci-box .sci-link button.first22,
+footer.scial .sci-box .sci-link button.second22,
+footer.scial .sci-box .sci-link button.third22,
+footer.scial .sci-box .sci-link button.fourth22,
+footer.scial .sci-box .sci-link button.fifth22 {
+    visibility: visible;
+    opacity: 1;
+}
+
+footer.scial .sci-box .sci-link button.first3,
+footer.scial .sci-box .sci-link button.second3,
+footer.scial .sci-box .sci-link button.third3,
+footer.scial .sci-box .sci-link button.fourth3,
+footer.scial .sci-box .sci-link button.fifth3 {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+footer.scial .sci-box .sci-link button.first33,
+footer.scial .sci-box .sci-link button.second33,
+footer.scial .sci-box .sci-link button.third33,
+footer.scial .sci-box .sci-link button.fourth33,
+footer.scial .sci-box .sci-link button.fifth33 {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*--------x--------social network------x----------*/
+
+
+/*----------------cREATE A NEW ACCOUNT----------------*/
+
+.end {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+.end .modl-free {
+    position: absolute;
+    background: #a4b0be;
+    padding: 40px;
+    width: 60%;
+    height: 100%;
+    box-shadow: 5px 6px #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 50vh;
+    display: none;
+}
+
+.end .modl-free span#toggle-modl {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border: 2px solid;
+    box-shadow: 5px 6px #000;
+    padding: 5px 10px;
+    background: transparent;
+    transition: 0.5s ease-in-out;
+}
+
+.end .modl-free span#toggle-modl i {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background: transparent;
+    transition: 0.5s ease-in-out;
+}
+
+.end .modl-free span#toggle-modl i:hover {
+    animation: xoay 0.5s linear alternate forwards;
+}
+
+@keyframes xoay {
+    from {
+        transform: rotate(0deg);
+        font-size: 20px;
+    }
+    to {
+        transform: rotate(360deg);
+        font-size: 25px;
+    }
+}
+
+.end .active-model {
+    display: block;
+}
+
+.end form {
+    margin: 20px 10px;
+    width: 40%;
+    padding: 10px;
+    background: #a4b0be;
+    border: 2px solid;
+    box-shadow: 5px 6px #000;
+    font-size: 16px;
+}
+
+.end form h1 {
+    text-align: center;
+}
+
+.end form .input-account {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.end form .input-account span {
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 0px #000;
+    font-size: 16px;
+}
+
+.end form .input-account input {
+    width: 100%;
+    padding: 6px 5px;
+    outline: none;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 3px #000;
+    font-size: 16px;
+    ;
+}
+
+.end form input[type="reset"] {
+    width: 100%;
+    padding: 5px;
+    color: #f1c40f;
+    background: #009432;
+    outline: none;
+    border: none;
+    box-shadow: 2px 3px #000;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.end form input[type="reset"]:hover {
+    box-shadow: none;
+}
+
+.end .generator-password {
+    width: 45%;
+    background: #a4b0be;
+    padding: 35px 30px;
+    border: 2px solid;
+    box-shadow: 5px 6px #000;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.end .generator-password .top-main {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.end .generator-password .bottom-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.end .generator-password .bottom-main .onmain {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.end .generator-password .bottom-main .onmain input#result {
+    letter-spacing: 2px;
+    border: 2px solid;
+    padding: 10px 15px;
+    outline: none;
+    --webkit-select-user: none;
+    font-size: 16px;
+}
+
+.end .generator-password .bottom-main button {
+    width: 20%;
+    padding: 5px;
+    color: #f1c40f;
+    background: #009432;
+    outline: none;
+    border: none;
+    box-shadow: 2px 3px #000;
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+.end .generator-password .bottom-main button:hover {
+    box-shadow: none;
+}
+
+.end .generator-password .bottom-main .onmain button.copied {
+    display: none;
+}
+
+.end .generator-password .bottom-main .onmain button.copied.active {
+    display: initial;
+}
+
+.end .generator-password .bottom-main .onmain button.copy.hidden {
+    display: none;
+}
+
+
+/*--------X-------cREATE A NEW ACCOUNT-------X---------*/
